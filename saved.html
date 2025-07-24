@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./SCSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+    <!----------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-sm nav-pills navbar-bg justify-content-center ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link mr-2 nav-color" data-toggle="pills"><i class="fa fa-home ml-2 mr-2" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link mr-2 nav-color"><i class="fa fa-heart ml-2 mr-2" aria-hidden="true"></i>Favorites</a>              
+            </li>
+            <li class="nav-item">
+                <a href="saved.html" class="nav-link mr-2 nav-color"><i class="fa fa-bookmark ml-2 mr-2" aria-hidden="true"></i>Saved</a>
+            </li>
+            <li class="nav-item">
+                <a href="srch.html" class="nav-link mr-2 nav-color"><i class="fa fa-search ml-2 mr-2" aria-hidden="true"></i>Search</a>            
+            </li>
+            <li class="nav-item">
+                <a href="history.html" class="nav-link mr-2 nav-color"><i class="fa fa-history ml-2 mr-2" aria-hidden="true"></i>History</a>
+            </li>
+            <li><i class="fa fa-user-circle nav-link nav-color place icon-hover" aria-hidden="true"></i></li>
+        </ul>
+    </nav>
+    <!----------------------------------------------------------------Table--------------------------------------------------------------------------------->
+    <div class="container-fluid table-style">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5><b>SAVED :</b></h5>
+        <button id="undoBtn" class="btn btn-danger btn-sm">Undo</button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="header-position">
+                <tr>
+                    <th>Row No.</th>
+                    <th>Book No.</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Year of Publication</th>
+                    <th>Status</th>
+                    <th>Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2</td>
+                    <td>B0015</td>
+                    <td>Jane Eyre</td>
+                    <td>Charlotte Brontë</td>
+                    <td>Smith, Elder & Co.</td>
+                    <td>1847</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>B0018</td>
+                    <td>Frankenstein</td>
+                    <td>Mary Shelley</td>
+                    <td>Lackington, Hughes, Harding, Mavor & Jones</td>
+                    <td>1818</td>
+                    <td>Issued</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>B0312</td>
+                    <td>Dracula</td>
+                    <td>Bram Stoker</td>
+                    <td>Archibald Constable and Company</td>
+                    <td>1897</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>B0320</td>
+                    <td>The Picture of Dorian Gray</td>
+                    <td>Oscar Wilde</td>
+                    <td>Ward, Lock & Company</td>
+                    <td>1890</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>B0457</td>
+                    <td>The Hobbit</td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>George Allen & Unwin</td>
+                    <td>1937</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>B0462</td>
+                    <td>Crime and Punishment</td>
+                    <td>Fyodor Dostoevsky</td>
+                    <td>The Russian Messenger</td>
+                    <td>1866</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>B0671</td>
+                    <td>Les Misérables</td>
+                    <td>Victor Hugo</td>
+                    <td>A. Lacroix, Verboeckhoven & Cie</td>
+                    <td>1862</td>
+                    <td>Issued</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>B7012</td>
+                    <td>Never Let Me Go</td>
+                    <td>Kazuo Ishiguro</td>
+                    <td>Faber and Faber</td>
+                    <td>2005</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>B7014</td>
+                    <td>The Remains of the Day</td>
+                    <td>Kazuo Ishiguro</td>
+                    <td>Faber and Faber</td>
+                    <td>1898</td>
+                    <td>Issued</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>B8112</td>
+                    <td>The Stormlight Archive</td>
+                    <td>Brandon Sanderson</td>
+                    <td>Tor Books</td>
+                    <td>2010</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>B1201</td>
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>Secker & Warburg</td>
+                    <td>1949</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>B1302</td>
+                    <td>Pride and Prejudice</td>
+                    <td>Jane Austen</td>
+                    <td>T. Egerton</td>
+                    <td>1813</td>
+                    <td>Issued</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>B1403</td>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Charles Scribner's Sons</td>
+                    <td>1925</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>B1504</td>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>J.B. Lippincott & Co.</td>
+                    <td>1960</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>B1605</td>
+                    <td>The Catcher in the Rye</td>
+                    <td>J.D. Salinger</td>
+                    <td>Little, Brown and Company</td>
+                    <td>1951</td>
+                    <td>Issued</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>B1706</td>
+                    <td>Jane Eyre</td>
+                    <td>Charlotte Brontë</td>
+                    <td>Smith, Elder & Co.</td>
+                    <td>1847</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>B1807</td>
+                    <td>Moby-Dick</td>
+                    <td>Herman Melville</td>
+                    <td>Harper & Brothers</td>
+                    <td>1851</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>B1908</td>
+                    <td>Frankenstein</td>
+                    <td>Mary Shelley</td>
+                    <td>Lackington, Hughes, Harding, Mavor & Jones</td>
+                    <td>1818</td>
+                    <td>Issued</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>B2009</td>
+                    <td>Dracula</td>
+                    <td>Bram Stoker</td>
+                    <td>Archibald Constable and Company</td>
+                    <td>1897</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>B2110</td>
+                    <td>The Picture of Dorian Gray</td>
+                    <td>Oscar Wilde</td>
+                    <td>Ward, Lock & Company</td>
+                    <td>1890</td>
+                    <td>Available</td>
+                    <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const undoBtn = document.getElementById("undoBtn");
+            const undoStack = []; // Stack to store removed rows and positions
+
+            // Attach click event to all current checkbox icons
+            function bindCheckboxEvents() {
+            const icons = document.querySelectorAll(".checkbox-style");
+            icons.forEach(function (icon) {
+                if (!icon.classList.contains("bound")) {
+                icon.classList.add("bound");
+                icon.style.cursor = "pointer";
+                icon.addEventListener("click", function () {
+                    const row = this.closest("tr");
+                    const tbody = row.parentElement;
+                    const index = Array.from(tbody.children).indexOf(row);
+                    const clonedRow = row.cloneNode(true);
+
+                    // Add to undo stack
+                    undoStack.push({ row: clonedRow, index: index });
+
+                    // Animate and remove
+                    row.classList.add("slide-up");
+                    row.addEventListener("transitionend", function () {
+                    row.remove();
+                    undoBtn.disabled = false;
+                    }, { once: true });
+                });
+                }
+            });
+            }
+
+            // Run on page load
+            bindCheckboxEvents();
+
+            // Undo button click handler
+            undoBtn.addEventListener("click", function () {
+            if (undoStack.length > 0) {
+                const { row, index } = undoStack.pop();
+                const tbody = document.querySelector("tbody");
+                const rows = Array.from(tbody.children);
+
+                // Reinsert the row at its original index
+                if (index >= rows.length) {
+                tbody.appendChild(row);
+                } else {
+                tbody.insertBefore(row, rows[index]);
+                }
+
+                // Re-bind checkbox in the restored row
+                bindCheckboxEvents();
+
+                // Disable button if stack is empty
+                if (undoStack.length === 0) {
+                undoBtn.disabled = true;
+                }
+            }
+            });
+        });
+
+        // Load saved books from localStorage
+    const savedBooks = JSON.parse(localStorage.getItem("saved")) || [];
+
+    const tbody = document.getElementById("savedBooksBody");
+
+    if (savedBooks.length > 0) {
+      savedBooks.forEach(book => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${book.bookNo}</td>
+          <td>${book.title}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+    </script> -->
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const undoBtn = document.getElementById("undoBtn");
+    const tableBody = document.querySelector(".table tbody");
+    const undoStack = []; // Stack to store removed rows and their positions
+
+    // Load saved books from sessionStorage
+    const savedBooks = JSON.parse(sessionStorage.getItem("saved")) || [];
+
+    if (savedBooks.length > 0) {
+      savedBooks.forEach((book, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${book.bookNo}</td>
+          <td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>${book.publisher}</td>
+          <td>${book.yearofpublication}</td>
+          <td>${book.status}</td>
+          <td><i class="fa fa-check-square checkbox-style" aria-hidden="true"></i></td>
+        `;
+        tableBody.appendChild(tr);
+      });
+    }
+
+    // Attach click event to all current checkbox icons
+    function bindCheckboxEvents() {
+      const icons = document.querySelectorAll(".checkbox-style");
+      icons.forEach(function (icon) {
+        if (!icon.classList.contains("bound")) {
+          icon.classList.add("bound");
+          icon.style.cursor = "pointer";
+          icon.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const tbody = row.parentElement;
+            const index = Array.from(tbody.children).indexOf(row);
+            const clonedRow = row.cloneNode(true);
+
+            // Add to undo stack
+            undoStack.push({ row: clonedRow, index: index });
+
+            // Animate and remove
+            row.classList.add("slide-up");
+            row.addEventListener("transitionend", function () {
+              row.remove();
+              undoBtn.disabled = false;
+            }, { once: true });
+          });
+        }
+      });
+    }
+
+    // Bind on initial load
+    bindCheckboxEvents();
+
+    // Undo button click handler
+    undoBtn.addEventListener("click", function () {
+      if (undoStack.length > 0) {
+        const { row, index } = undoStack.pop();
+        const rows = Array.from(tableBody.children);
+
+        // Reinsert row at original index
+        if (index >= rows.length) {
+          tableBody.appendChild(row);
+        } else {
+          tableBody.insertBefore(row, rows[index]);
+        }
+
+        // Re-bind checkbox on restored row
+        bindCheckboxEvents();
+
+        if (undoStack.length === 0) {
+          undoBtn.disabled = true;
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>

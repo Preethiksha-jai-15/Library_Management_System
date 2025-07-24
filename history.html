@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./SCSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+    <!----------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-sm nav-pills navbar-bg justify-content-center ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link mr-2 nav-color" data-toggle="pills"><i class="fa fa-home ml-2 mr-2" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link mr-2 nav-color"><i class="fa fa-heart ml-2 mr-2" aria-hidden="true"></i>Favorites</a>              
+            </li>
+            <li class="nav-item">
+                <a href="saved.html" class="nav-link mr-2 nav-color"><i class="fa fa-bookmark ml-2 mr-2" aria-hidden="true"></i>Saved</a>
+            </li>
+            <li class="nav-item">
+                <a href="srch.html" class="nav-link mr-2 nav-color"><i class="fa fa-search ml-2 mr-2" aria-hidden="true"></i>Search</a>            </li>
+            <li class="nav-item">
+                <a href="history.html" class="nav-link mr-2 nav-color"><i class="fa fa-history ml-2 mr-2" aria-hidden="true"></i>History</a>
+            </li>
+            <li><i class="fa fa-user-circle nav-link nav-color place icon-hover" aria-hidden="true"></i></li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
+        <h5><b>HISTORY :</b></h5>
+        </div>
+        <div class="row m-0 img-gap">
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-1.JPG" alt="Gone Girl">
+                    <h5 class="title-style">Gone Girl</h5>
+                    <p class="body-style">Gillian Flynn</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-2.JPG" alt="Gone Girl">
+                    <h5 class="title-style">Me Before You</h5>
+                    <p class="body-style">Jojo Moyes</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-3.JPG" alt="Life of Pi">
+                    <h5 class="title-style">Life of Pi</h5>
+                    <p class="body-style">Yann Martel</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-4.JPG" alt="To Kill a Mockingbird">
+                    <h5 class="title-style">To Kill a Mockingbird</h5>
+                    <p class="body-style">Harper Lee</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-5.JPG" alt="Moby-Dick">
+                    <h5 class="title-style">Moby-Dick</h5>
+                    <p class="body-style">Herman Melville</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-6.JPG" alt="The Alchemist">
+                    <h5 class="title-style">The Alchemist</h5>
+                    <p class="body-style">Paulo Coelho</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-7.JPG" alt="Everything, Everything">
+                    <h5 class="title-style">Everything, Everything</h5>
+                    <p class="body-style">Frank Herbert</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-8.JPG" alt="The Flatshare">
+                    <h5 class="title-style">The Flatshare</h5>
+                    <p class="body-style">Beth O'Leary</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-9.JPG" alt="Too Good To Be True">
+                    <h5 class="title-style">Too Good To Be True</h5>
+                    <p class="body-style">Prajakta Koli</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-10.JPG" alt="A Man Called Ove">
+                    <h5 class="title-style">A Man Called Ove</h5>
+                    <p class="body-style">Fredrik Backman</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-11.JPG" alt="The Fault in Our Stars">
+                    <h5 class="title-style">The Fault in Our Stars</h5>
+                    <p class="body-style">John Green</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-12.JPG" alt="Eleanor & Park">
+                    <h5 class="title-style">Eleanor & Park</h5>
+                    <p class="body-style">Rainbow Rowell</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-13.JPG" alt="Animal Farm">
+                    <h5 class="title-style">Animal Farm</h5>
+                    <p class="body-style">George Orwell</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-14.JPG" alt="We Were Liars">
+                    <h5 class="title-style">We Were Liars</h5>
+                    <p class="body-style">E. Lockhart</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 img-style">
+                <div>
+                    <img class="img-position" src="./Assests/Images/hist-15.JPG" alt="Matilda">
+                    <h5 class="title-style">Matilda</h5>
+                    <p class="body-style">Roald Dahl</p>
+                     <div class="date-row">
+                           <p class="bd"> BD:12/05/2025</p>
+                            <p class="rd" > RD:11/06/2025</p>
+                            </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./SCSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+    <!----------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-sm nav-pills navbar-bg justify-content-center ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link mr-2 nav-color" data-toggle="pills"><i class="fa fa-home ml-2 mr-2" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link mr-2 nav-color"><i class="fa fa-heart ml-2 mr-2" aria-hidden="true"></i>Favorites</a>              
+            </li>
+            <li class="nav-item">
+                <a href="saved.html" class="nav-link mr-2 nav-color"><i class="fa fa-bookmark ml-2 mr-2" aria-hidden="true"></i>Saved</a>
+            </li>
+            <li class="nav-item">
+                <a href="srch.html" class="nav-link mr-2 nav-color"><i class="fa fa-search ml-2 mr-2" aria-hidden="true"></i>Search</a>            
+            </li>
+            <li class="nav-item">
+                <a href="history.html" class="nav-link mr-2 nav-color"><i class="fa fa-history ml-2 mr-2" aria-hidden="true"></i>History</a>
+            </li>
+            <li><i class="fa fa-user-circle nav-link nav-color place icon-hover" aria-hidden="true"></i></li>
+        </ul>
+    </nav>
+<!------Testing Starts-->
+<div class="container-fluid p-0">
+    <div class="row m-0">
+                    <div class="col-8 ">
+                        <div class="row m-0">
+<!---------------------------------------------------------------------------New Arrivals--------------------------------------------------------------------------->
+                            <div class="col-8">
+                                <div class="p-0 border-brown box-1 btn-box">
+                                    <nav class="navbar navbar-expand-sm navbar-bg box-nav">
+                                        <p class="heading">New Arrivals</p>
+                                    </nav>
+                                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="4"></li>
+
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner carousel-img">
+    
+    <div class="carousel-item active">
+      <img src="./Assests/Images/img-1.jpg" alt="Los Angeles" width="1100" height="50">
+    </div>
+    <div class="carousel-item">
+      <img src="./Assests/Images/img-2.webp" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="./Assests/Images/img-3.webp" alt="New York" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="./Assests/Images/img-4.JPG" alt="New York" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="./Assests/Images/img-5.jpg" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+                                    </div>
+                                </div>
+                            </div>
+<!--------------------------------------------------------------------------------Popular Books--------------------------------------------------------------------------->
+                            <div class="col-4 box-2">
+                                <div class="p-0 border-brown box-1 btn-box">
+                                    <nav class="navbar navbar-expand-sm navbar-bg box-nav">
+                                        <p class="heading">Popular Books</p>
+                                    </nav>
+                                    <div class="carousel-container">
+                                        <button class="nav-button prev" onclick="slide(-1)">&#10094;</button>
+                                        <div class="carousel-2 disp-none" id="bookCarousel">
+                                            <div class="book">
+                                                <img src="./Assests/Images/p-1.jpg" alt="James">
+                                                <div>James</div>
+                                            </div>
+                                            <div class="book">
+                                                <img src="./Assests/Images/p-2.jpg" alt="The Chosen">
+                                                <div>The Chosen</div>
+                                            </div>
+                                            <div class="book">
+                                                <img src="./Assests/Images/p-3.jpg" alt="Onyx Storm">
+                                                <div>Onyx Storm</div>
+                                            </div>
+                                            <div class="book">
+                                                <img src="./Assests/Images/p-4.jpg" alt="Atomic Habits">
+                                                <div>Atomic Habits</div>
+                                            </div>
+                                        </div>
+                                        <button class="nav-button next" onclick="slide(1)">&#10095;</button>
+                                    </div>
+                                    <script>
+                                        function slide(direction) {
+                                            const container = document.getElementById("bookCarousel");
+                                            const scrollAmount = 130; // Adjust based on book width + gap
+                                            container.scrollBy({
+                                                left: direction * scrollAmount,
+                                                behavior: 'smooth'
+                                             });
+                                        }
+                             </script>
+                                </div>
+                            </div>
+                        </div>
+<!--------------------------------------------------------------------------------Top Authors----------------------------------------------------------------------------->
+                        <div class="col-12">
+                        <h5 class="au-title">Top Authors</h5>
+                        <div class="carousel-container">
+                        <div class="carousel-2 disp-none placement" id="bookCarousel">
+                        <div class="container pic-allign">
+                            <div class="all-img">
+                                <div class="author">
+                                    <img src="./Assests/Images/au-1.jpeg" class="rounded-circle circle-img" alt="Cinque Terre"> 
+                                    <div class="au-name">J. K. Rowling</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-2.jpeg" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Shashi Tharoor</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-3.jpeg" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Leo Tolstoy</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-4.webp" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Margaret Atwood</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-5.jpeg" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Stephen King</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-6.jpeg" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Arundhati Roy</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-7.jpeg" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Ruskin Bond</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-8.jpeg" class="rounded-circle circle-img" alt="Cinque Terre">
+                                    <div class="au-name">Helen Cooper</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-9.jpeg" class="rounded-circle circle-img" alt="Cinque Terre"> 
+                                    <div class="au-name">Danielle Steel</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-10.png" class="rounded-circle circle-img" alt="Cinque Terre"> 
+                                    <div class="au-name">John Green</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-11.avif" class="rounded-circle circle-img" alt="Cinque Terre"> 
+                                    <div class="au-name">Amitav Ghosh</div>
+                                </div>
+                                <div class="author">
+                                    <img src="./Assests/Images/au-12.jpeg" class="rounded-circle circle-img" alt="Cinque Terre"> 
+                                    <div class="au-name">Vikram Seth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                        <div class="row m-0">
+<!----------------------------------------------------------------------------------E-Books------------------------------------------------------------------------------>
+                        <div class="col-6 ">
+                        <div class="p-0 border-brown box-1 btn-box">
+                            <nav class="navbar navbar-expand-sm navbar-bg box-nav">
+                                <p class="heading">E-Books</p>
+                            </nav>
+                        <div class="container box-4 ">
+    <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        
+        <a class="card-link card-link-color" data-toggle="collapse" href="#collapseOne">
+            Pride and Prejudice
+        </a>
+        <button class="btn btn-link p-0" type="button" data-toggle="collapse" data-target="#collapseOne">
+            <i class="fa fa-angle-down arrow-style" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="collapseOne" class="collapse" data-parent="#accordion">
+        <div class="card-body body-height">
+           <div class="row m-0">
+                <div class="col-1 p-0">
+                    <img src="./Assests/Images/eb-1.JPG" alt="Pride and Prejudice" class="eb-width">
+                </div>
+
+                <div class=" col-11 body-allign">The novel focuses on the Bennet family and their pursuit of suitable matches...<button class="btn btn-sm btn-link text-primary p-0 mt-1 show-more-btn" data-summary="The novel focuses on the Bennet family and their pursuit of suitable matches, highlighting the impact of pride and prejudice on relationships. Through the central romance of Elizabeth Bennet and Mr. Darcy, Austen critiques societal norms and explores themes of love, social status, and personal growth.">Show More</button>
+
+                </div>
+           </div> 
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        
+        <a class="card-link card-link-color" data-toggle="collapse" href="#collapseTwo">
+            The Tenant
+        </a>
+        <button class="btn btn-link p-0" type="button" data-toggle="collapse" data-target="#collapseTwo">
+            <i class="fa fa-angle-down arrow-style" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body body-height">
+           <div class="row m-0">
+                <div class="col-1 p-0">
+                    <img src="./Assests/Images/eb-2.JPG" alt="The Tenant" class="eb-width">
+                </div>
+
+                <div class=" col-11 body-allign">Blake Porter is riding high, until he's not. Fired abruptly from his job as a VP of marketing...<button class="btn btn-sm btn-link text-primary p-0 mt-1 show-more-btn" data-summary="Blake Porter is riding high, until he's not. Fired abruptly from his job as a VP of marketing and unable to make the mortgage payments on the new brownstone that he shares with his fiancee, he's desperate to make ends meet.
+                                                Enter Whitney. Beautiful, charming, down-to-earth, and looking for a room to rent. She's exactly what Blake's looking for.">Show More</button>
+                    <br><a href="#" class="text-secondary">Download!</a>
+                </div>
+           </div> 
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        
+        <a class="card-link card-link-color" data-toggle="collapse" href="#collapseThree">
+            Rewind It Back (Windy City Series Book 5)
+        </a>
+        <button class="btn btn-link p-0" type="button" data-toggle="collapse" data-target="#collapseThree">
+            <i class="fa fa-angle-down arrow-style" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="collapseThree" class="collapse " data-parent="#accordion">
+        <div class="card-body body-height">
+           <div class="row m-0">
+                <div class="col-1 p-0">
+                    <img src="./Assests/Images/eb-3.JPG" alt="Rewind It Back (Windy City Series Book 5)" class="eb-width">
+                </div>
+
+                <div class=" col-11 body-allign">Six years later, I've landed an internship with a big-name interior designer in a new city. Unfortunately,...<button class="btn btn-sm btn-link text-primary p-0 mt-1 show-more-btn" data-summary="Six years later, I've landed an internship with a big-name interior designer in a new city. Unfortunately, that city just so happens to be the one he plays hockey for.
+                                                I thought Chicago was big enough to avoid him, until I get the surprise of a lifetime and unknowingly move in right next door.
+                                                Even worse? The renovation project I'm assigned to in hopes of turning that internship into my full-time dream job...">Show More</button>
+                    <br><a href="#" class="text-secondary">Download!</a>
+                </div>
+           </div> 
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        
+        <a class="card-link card-link-color" data-toggle="collapse" href="#collapseFour">
+            Till Summer Do Us Part 
+        </a>
+        <button class="btn btn-link p-0" type="button" data-toggle="collapse" data-target="#collapseFour">
+            <i class="fa fa-angle-down arrow-style" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="collapseFour" class="collapse" data-parent="#accordion">
+        <div class="card-body body-height">
+           <div class="row m-0">
+                <div class="col-1 p-0">
+                    <img src="./Assests/Images/eb-4.JPG" alt="Till Summer Do Us Part " class="eb-width">
+                </div>
+
+                <div class=" col-11 body-allign">A heartfelt contemporary romance e-book that explores love, heartbreak, and...<button class="btn btn-sm btn-link text-primary p-0 mt-1 show-more-btn" data-summary="A heartfelt contemporary romance e-book that explores love, heartbreak, and second chances. Set against the warmth of a coastal summer, it follows two former lovers unexpectedly reunited. As old feelings resurface, they must confront their past to redefine their future. It's a story of healing, timing, and the courage to begin again.">Show More</button>
+                    <br><a href="#" class="text-secondary">Download!</a>
+                </div>
+           </div> 
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        
+        <a class="card-link card-link-color" data-toggle="collapse" href="#collapseFive">
+            Pride and Prejudice
+        </a>
+        <button class="btn btn-link p-0" type="button" data-toggle="collapse" data-target="#collapseFive">
+            <i class="fa fa-angle-down arrow-style" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="collapseFive" class="collapse" data-parent="#accordion">
+        <div class="card-body body-height">
+           <div class="row m-0">
+                <div class="col-1 p-0">
+                    <img src="./Assests/Images/eb-5.JPG" alt="Pride and Prejudice" class="eb-width">
+                </div>
+
+                <div class=" col-11 body-allign">A powerful historical fiction novel centered on resilience during wartime. It follows...<button class="btn btn-sm btn-link text-primary p-0 mt-1 show-more-btn" data-summary="A powerful historical fiction novel centered on resilience during wartime. It follows characters navigating loss, courage, and moral choices amid the chaos of conflict. Deeply emotional and poetic, the story highlights how even small acts of kindness can be a shield against darkness. A tale of hope, sacrifice, and the enduring human spirit.">Show More</button>
+                    <br><a href="#" class="text-secondary">Download!</a>
+                </div>
+           </div> 
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="popupCard" class="popup-style display-none">
+  <div id="popupContent"></div>
+</div>
+<!----------------------Pop-Up Script------------------------->
+<script>
+  // Show popup when clicking 'Show More'
+  document.querySelectorAll('.show-more-btn').forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.stopPropagation();
+
+      const popup = document.getElementById('popupCard');
+      const content = document.getElementById('popupContent');
+      const summary = this.getAttribute('data-summary');
+
+      content.innerText = summary;
+
+      const rect = this.getBoundingClientRect();
+      popup.style.top = (window.scrollY + rect.top - popup.offsetHeight - 10) + 'px';
+      popup.style.left = (window.scrollX + rect.left) + 'px';
+      popup.style.display = 'block';
+    });
+  });
+
+  // Hide popup on clicking anywhere else
+  window.addEventListener('click', function () {
+    const popup = document.getElementById('popupCard');
+    popup.style.display = 'none';
+  });
+</script>
+
+
+
+
+                        </div>
+
+  
+                        </div>
+                        </div>
+<!-----------------------------------------------------------------------------------Borrowed Books---------------------------------------------------------------------->
+                        <div class="col-6">
+                        <div class="p-0 border-brown box-1 btn-box">
+                            <nav class="navbar navbar-expand-sm navbar-bg box-nav">
+                                <p class="heading">Borrowed Books</p>
+                            </nav>
+                            <div class="circle-bg circle-position">
+                                <div class="rounded-circle border-style d-flex circle-style ">3</div>
+                            </div>
+                            <div class="borrowedbook">
+                            <div class="row m-0 mb-2 bottom-border">
+                                <div class="col-2">
+                                    <img src="./Assests/Images/bbk-1.JPG" alt="Think Link A Monk" class="borrowedbook-img">
+                                </div>
+                                <div class="col-10">
+                                    Think Like a Monk: Train Your Mind for Peace and Purpose Every Day                                   
+                                    <div class="row m-0 d-flex justify-content-between mt-3">
+                                    <span class="col-6 p-0 bd"> BD:12/05/2025</span>
+                                    <span class="col-6 rd"> RD:11/06/2025</span>
+                                    </div>
+                                    
+                                </div> 
+                                
+                            </div>
+                            <div class="row m-0 mb-2 bottom-border">
+                                <div class="col-2">
+                                    <img src="./Assests/Images/bbk-2.JPG" alt="The Psychology of Money" class="borrowedbook-img">
+                                </div>
+                                <div class="col-10">
+                                    The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness
+                                    <div class="row m-0 d-flex justify-content-between mt-3">
+                                    <span class="col-6 p-0 bd"> BD:13/04/2025</span>
+                                    <span class="col-6 rd"> RD:14/05/2025</span>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="row m-0 mb-2">
+                                <div class="col-2">
+                                    <img src="./Assests/Images/bbk-3.JPG" alt="Ikigai" class="borrowedbook-img">
+                                </div>
+                                <div class="col-10">
+                                    Ikigai: The Japanese Secret to a Long and Happy Life
+                                    <div class="row m-0 d-flex justify-content-between mt-3">
+                                    <span class="col-6 p-0 bd"> BD:20/06/2025</span>
+                                    <span class="col-6 rd"> RD:19/07/2025</span>
+                                    </div>
+                                </div>  
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+<!-----------------------------------------------------------------------------------------PODCAST---------------------------------------------------------------------------------->                     
+    <div class="col-4 box-3">
+                        <div class="p-0 border-brown box-1 box3-style btn-box">
+                            <nav class="navbar navbar-expand-sm navbar-bg box-nav">
+                                <p class="heading">Podcast</p>
+                            </nav>
+    <div class="card-body text-center">
+
+    <!-- Podcast Preview Row -->
+    <div class="img-row mb-2 d-flex">
+      <img id="prevPodcastImage" class="podcast-img" src="" alt="Previous Podcast">
+      <img id="currentPodcastImage" class="podcast-img active" src="" alt="Current Podcast">
+      <img id="nextPodcastImage" class="podcast-img" src="" alt="Next Podcast">
+    </div>
+
+    <!-- Title & Author -->
+    <h6 id="podcastTitle" class="title-position"></h6>
+    <small id="podcastAuthor" class="text-muted podcast-name"></small>
+
+  
+
+    <!-- Controls -->
+    <div class="d-flex justify-content-around button-position button-style">
+      <i class="fa fa-chevron-circle-left" onclick="prevPodcast()"></i> 
+      <i class="fa fa-pause-circle"></i>
+      <i class="fa fa-chevron-circle-right" onclick="nextPodcast()"></i>
+    </div>
+
+  </div>
+  
+       <div class="epi-style"><u>Episodes</u></div>
+    <div class="podcast-style">
+      <!-- Episodes will be injected here -->
+    </div>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  const podcasts = [
+    {
+      title: "On Purpose",
+      author: "Jay Shetty",
+      image: "podcast-2.jpg",
+      episodes: [
+        { title: "1. Brain Surgeon Reveals How Understanding Your Dreams Can Help You Process Emotional Trauma", guest: "With Dr. Rahul Jandial" },
+        { title: "2. Stop Chasing Emotionally Unavailable People", guest: "With Lisa Bilyeu" },
+        { title: "3. If You're A People Pleaser Listen To This!", guest: "With Meggan Roxanne" },
+        { title: "4. Not Every Friendship Is Meant To Last And That's Okay!", guest: "Simon Sinek" },
+        { title: "5. 7 Harsh Truths I Wish I Knew In My 20's", guest: "With Jay Shetty" },
+        { title: "6. How To Use The 'Let Them Theory'", guest: "With Mel Robbins" }
+      ]
+    },
+    {
+      title: "The Diary of a CEO",
+      author: "Steven Bartlett",
+      image: "podcast-1.jpg",
+      episodes: [
+        { title: "1. My Billion-Dollar Mistake", guest: "With Steven Bartlett" },
+        { title: "2. How to Network", guest: "With Steven Bartlett" },
+        { title: "3. Lessons from Elon Musk", guest: "With Steven Bartlett" },
+        { title: "4. Sacrifice, Work/Life Balance & Purpose", guest: "With Steven Bartlett" },
+        { title: "5. Happiness, Meditation and Weird Wins", guest: "With Steven Bartlett"}
+      ]
+    },
+    {
+      title: "The Mel Robbins Podcast",
+      author: "Mel Robbins",
+      image: "podcast-3.jpg",
+      episodes: [
+        { title: "1. Stop Overthinking", guest: "With Mel Robbins" },
+        { title: "2. Confidence Toolkit", guest: "With Mel Robbins" },
+        { title: "3. Your Morning Reset", guest: "With Mel Robbins" },
+        { title: "4. Once You Learn This YOu'll Never Be The Same", guest: "With Judge Frank Caprio"},
+        { title: "5. This Conversation Will Change Your Life: Do This to Find Purpose & Meaning", guest: "With Bryan Stevenson"}
+      ]
+    }
+  ];
+
+  let currentIndex = 0;
+
+  function updatePodcast() {
+    const current = podcasts[currentIndex];
+    const prev = podcasts[(currentIndex - 1 + podcasts.length) % podcasts.length];
+    const next = podcasts[(currentIndex + 1) % podcasts.length];
+
+    document.getElementById("currentPodcastImage").src = current.image;
+    document.getElementById("podcastTitle").innerText = current.title;
+    document.getElementById("podcastAuthor").innerText = current.author;
+
+    document.getElementById("prevPodcastImage").src = prev.image;
+    document.getElementById("nextPodcastImage").src = next.image;
+
+    const container = document.querySelector(".podcast-style");
+    container.innerHTML = "";
+
+    current.episodes.forEach(ep => {
+      const epDiv = document.createElement("div");
+      epDiv.className = "m-0 mb-2 bottom-border";
+
+      epDiv.innerHTML = `
+        <div class="epi-padd">
+          ${ep.title}
+          <div class="text-muted">${ep.guest}</div>
+        </div>
+      `;
+      container.appendChild(epDiv);
+    });
+  }
+
+  function nextPodcast() {
+    currentIndex = (currentIndex + 1) % podcasts.length;
+    updatePodcast();
+  }
+
+  function prevPodcast() {
+    currentIndex = (currentIndex - 1 + podcasts.length) % podcasts.length;
+    updatePodcast();
+  }
+
+  // Load first podcast on page load
+  window.onload = updatePodcast;
+</script>                                       
+</div>
+</div>
+</body>
+</html>

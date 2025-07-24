@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./SCSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  </head>
+  <body>
+    <!-----------------------------------------------------Nav bar---------------------------------------------------------->
+    <nav class="navbar navbar-expand-sm nav-pills navbar-bg justify-content-center ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link mr-2 nav-color" data-toggle="pills"><i class="fa fa-home ml-2 mr-2" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link mr-2 nav-color"><i class="fa fa-heart ml-2 mr-2" aria-hidden="true"></i>Favorites</a>              
+            </li>
+            <li class="nav-item">
+                <a href="saved.html" class="nav-link mr-2 nav-color"><i class="fa fa-bookmark ml-2 mr-2" aria-hidden="true"></i>Saved</a>
+            </li>
+            <li class="nav-item">
+                <a href="srch.html" class="nav-link mr-2 nav-color"><i class="fa fa-search ml-2 mr-2" aria-hidden="true"></i>Search</a>            </li>
+            <li class="nav-item">
+                <a href="history.html" class="nav-link mr-2 nav-color"><i class="fa fa-history ml-2 mr-2" aria-hidden="true"></i>History</a>
+            </li>
+            <li><i class="fa fa-user-circle nav-link nav-color place icon-hover" aria-hidden="true"></i></li>
+        </ul>
+    </nav>
+    
+    <!---------------------------------------------------------Search Bar----------------------------------------------------->
+    <div class="container-fluid table-style">
+        <div class="form-inline justify-content-center mb-3">
+            <input class="form-control mr-sm-2 srch-style col-6" id="searchInput" type="text" placeholder="Search by book name" nfocus="showDropdown()" onblur="hideDropdown()">
+            <i id="searchIcon" class="fa fa-search srch-icon-style" aria-hidden="true" style="cursor:pointer"></i>
+            <button type="button" class="btn btn-success btn-sm search-tab-icon mr-2" onclick="saveSelected('saved')"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>SAVE</button>
+            <button type="button" class="btn btn-danger btn-sm search-tab-icon" onclick="saveSelected('favorites')"><i class="fa fa-heart mr-2" aria-hidden="true"></i>FAVORITES</button>
+        </div>
+
+        <!--------------------------------------------------Filters---------------------------------------------------------->
+        <div class="dropdown col-6 dropdown-box" id="filterDropdown">
+            <div class="filter-group">
+                <div class="filter-column">
+                    <strong><h6>Genre</h6></strong>
+                    <ul>
+                        <li onclick="selectFilter('Genre', 'Fiction')">Fiction</li>
+                        <li onclick="selectFilter('Genre', 'Mystery')">Mystery</li>
+                        <li onclick="selectFilter('Genre', 'Romance')">Romance</li>
+                        <li onclick="selectFilter('Genre', 'Adventure')">Adventure</li>
+                        <li onclick="selectFilter('Genre', 'Biography')">Biography</li>
+                        <li onclick="selectFilter('Genre', 'Autobiography')">Autobiography</li>
+                    </ul>
+                </div>
+                <div class="filter-column">
+                    <strong><h6>Language</h6></strong>
+                    <ul>
+                        <li onclick="selectFilter('Language', 'English')">English</li>
+                        <li onclick="selectFilter('Language', 'Tamil')">Tamil</li>
+                        <li onclick="selectFilter('Language', 'German')">German</li>
+                        <li onclick="selectFilter('Language', 'French')">French</li>
+                        <li onclick="selectFilter('Language', 'Hindi')">Hindi</li>
+                    </ul>
+                </div>
+                <div id="selectedFiltersBox" class="ml-auto"></div>
+            </div>
+            <button class="btn btn-info btn-sm mt-2" onclick="applyFilters()">Search</button>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------Table------------------------------------------------------------>
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Row No.</th>
+                    <th>Book No.</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Year of Publication</th>
+                    <th>Genre</th>
+                    <th>Language</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0015</td>
+                    <td>Jane Eyre</td>
+                    <td>Charlotte Brontë</td>
+                    <td>Smith, Elder & Co.</td>
+                    <td>1847</td>
+                    <td>Romance</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0018</td>
+                    <td>Frankenstein</td>
+                    <td>Mary Shelley</td>
+                    <td>Lackington, Hughes, Harding, Mavor & Jones</td>
+                    <td>1818</td>
+                    <td>Fiction</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0312</td>
+                    <td>Mein Kampf</td>
+                    <td>Adolf Hitler</td>
+                    <td>Franz Eher Verlag</td>
+                    <td>1925</td>
+                    <td>Autobiography</td>
+                    <td>German</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0320</td>
+                    <td>Becoming</td>
+                    <td>Michelle Obama</td>
+                    <td>Crown Publishing Group</td>
+                    <td>2018</td>
+                    <td>Autobiography</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B0457</td>
+                    <td>The Hobbit</td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>George Allen & Unwin</td>
+                    <td>1937</td>
+                    <td>John Ronald Reuel Tolkien</td>
+                    <td>English/td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B0462</td>
+                    <td>La Vie de Van Gogh</td>
+                    <td>Marc Edo Tralbaut</td>
+                    <td>Gallimard</td>
+                    <td>1956</td>
+                    <td>Biography</td>
+                    <td>French</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B0671</td>
+                    <td>The Wright Brothers	</td>
+                    <td>David McCullough</td>
+                    <td>Simon & Schuster</td>
+                    <td>2015</td>
+                    <td>Biography</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B7012</td>
+                    <td>Never Let Me Go</td>
+                    <td>Kazuo Ishiguro</td>
+                    <td>Faber and Faber</td>
+                    <td>2005</td>
+                    <td>Dystopian, Science Fiction, Drama</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B7014</td>
+                    <td>Me Before You</td>
+                    <td>Jojo Moyes</td>
+                    <td>Penguin Books</td>
+                    <td>2012</td>
+                    <td>Romance</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B8112</td>
+                    <td>The Girl on the Train</td>
+                    <td>Paula Hawkins</td>
+                    <td>Riverhead Books</td>
+                    <td>2015</td>
+                    <td>Thriller</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B1201</td>
+                    <td>The Silent Patient</td>
+                    <td>Alex Michaelides</td>
+                    <td>Celadon Books</td>
+                    <td>2019</td>
+                    <td>Thriller</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B1302</td>
+                    <td>Educated</td>
+                    <td>Tara Westover</td>
+                    <td>Random House</td>
+                    <td>2018</td>
+                    <td>Non-fiction</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B1403</td>
+                    <td>Ponniyin Selvan</td>
+                    <td>Kalki Krishnamurthy</td>
+                    <td>Vanathi Pathippagam</td>
+                    <td>1950s</td>
+                    <td>Adventure</td>
+                    <td>Tamil</td>
+                    <td>Available</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7004</td>
+                    <td>Die Leiden des jungen Werthers</td>
+                    <td>Johann Wolfgang von Goethe</td>
+                    <td>Insel Verlag</td>
+                    <td>1774</td>
+                    <td>Available</td>
+                    <td>Romance, Tragedy</td>
+                    <td>German</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7005</td>
+                    <td>Le Comte de Monte-Cristo</td>
+                    <td>Alexandre Dumas</td>
+                    <td>Michel Lévy Frères</td>
+                    <td>1844</td>
+                    <td>Available</td>
+                    <td>Adventure, Historical Fiction</td>
+                    <td>French</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7006</td>
+                    <td>Notre-Dame de Paris</td>
+                    <td>Victor Hugo</td>
+                    <td>Gosselin</td>
+                    <td>1831</td>
+                    <td>Available</td>
+                    <td>Romance, Gothic Fiction</td>
+                    <td>French</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7007</td>
+                    <td>Don Quijote de la Mancha</td>
+                    <td>Miguel de Cervantes</td>
+                    <td>Francisco de Robles</td>
+                    <td>1605</td>
+                    <td>Available</td>
+                    <td>Adventure, Satire</td>
+                    <td>Spanish</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7008</td>
+                    <td>Cien años de soledad</td>
+                    <td>Gabriel García Márquez</td>
+                    <td>Editorial Sudamericana</td>
+                    <td>1967</td>
+                    <td>Available</td>
+                    <td>Magical Realism, Literary Fiction</td>
+                    <td>Spanish</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-----------------------------------------------Script-------------------------------------->
+    <script>
+  let selectedFilters = [];
+
+  // Add filter tag
+  function selectFilter(category, value) {
+    const key = `${category}:${value}`;
+    if (!selectedFilters.includes(key)) {
+      selectedFilters.push(key);
+      updateSelectedFilters();
+    }
+  }
+
+  // Remove filter by index
+  function removeFilter(index) {
+    selectedFilters.splice(index, 1);
+    updateSelectedFilters();
+    applyFilters();
+  }
+
+  // Update filter tag display
+  function updateSelectedFilters() {
+    const container = document.getElementById("selectedFiltersBox");
+    container.innerHTML = "";
+    selectedFilters.forEach((item, index) => {
+      const [_, value] = item.split(":");
+      const tag = document.createElement("div");
+      tag.className = "filter-tag";
+      tag.style.cssText = "display:inline-block;padding:4px 10px;margin:2px;background:#d1ecf1;border-radius:12px;font-size:12px;border:1px solid #bee5eb;";
+      tag.innerHTML = `${value} <span style="cursor:pointer;" onclick="removeFilter(${index})">&times;</span>`;
+      container.appendChild(tag);
+    });
+  }
+
+  // Apply search + filter logic
+  function applyFilters() {
+    const input = document.getElementById("searchInput").value.trim().toLowerCase();
+    const rows = document.querySelectorAll("table tbody tr");
+
+    rows.forEach(row => {
+      const title = row.children[3]?.textContent.toLowerCase();
+      const genre = row.children[7]?.textContent.toLowerCase() || "";
+      const language = row.children[8]?.textContent.toLowerCase() || "";
+
+      const matchesSearch = input === "" || title.includes(input);
+      let matchesFilters = true;
+
+      selectedFilters.forEach(filter => {
+        const [cat, val] = filter.split(":");
+        const valLower = val.toLowerCase();
+
+        if (cat === "Genre" && !genre.includes(valLower)) matchesFilters = false;
+        if (cat === "Language" && !language.includes(valLower)) matchesFilters = false;
+      });
+
+      // Final decision: show row only if both match
+      row.style.display = matchesSearch && matchesFilters ? "" : "none";
+    });
+  }
+
+  // Save selected books
+  function saveSelected(type) {
+    const selectedBooks = [];
+    const checkboxes = document.querySelectorAll("table tbody input[type='checkbox']");
+
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        const row = checkbox.closest("tr");
+        const book = {
+          bookNo: row.children[2]?.textContent.trim(),
+          title: row.children[3]?.textContent.trim(),
+          author: row.children[4]?.textContent.trim(),
+          publisher: row.children[5]?.textContent.trim(),
+          yearofpublication: row.children[6]?.textContent.trim(),
+          status: row.children[7]?.textContent.trim()
+        };
+        selectedBooks.push(book);
+      }
+    });
+
+    if (selectedBooks.length > 0) {
+      let existing = JSON.parse(sessionStorage.getItem(type)) || [];
+      existing = [...existing, ...selectedBooks];
+      sessionStorage.setItem(type, JSON.stringify(existing));
+      alert(`✅ Added ${selectedBooks.length} book(s) to ${type}`);
+    } else {
+      alert("⚠️ No books selected");
+    }
+  }
+
+  // Show filter dropdown on input focus
+  const searchInput = document.getElementById("searchInput");
+  const filterDropdown = document.getElementById("filterDropdown");
+  const searchIcon = document.getElementById("searchIcon");
+
+  searchInput.addEventListener("focus", () => {
+    filterDropdown.style.display = "block";
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!filterDropdown.contains(event.target) && !searchInput.contains(event.target)) {
+      filterDropdown.style.display = "none";
+    }
+  });
+
+  // Search icon click triggers filter
+  searchIcon.addEventListener("click", applyFilters);
+
+  // Pressing Enter also triggers filter
+  searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      applyFilters();
+    }
+  });
+
+  // Filter dropdown "Search" button
+  document.querySelector("#filterDropdown .btn-info").addEventListener("click", applyFilters);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+  </html>

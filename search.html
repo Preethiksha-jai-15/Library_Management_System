@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./SCSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+    <!----------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-sm nav-pills navbar-bg justify-content-center ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link mr-2 nav-color" data-toggle="pills"><i class="fa fa-home ml-2 mr-2" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link mr-2 nav-color"><i class="fa fa-heart ml-2 mr-2" aria-hidden="true"></i>Favorites</a>              
+            </li>
+            <li class="nav-item">
+                <a href="saved.html" class="nav-link mr-2 nav-color"><i class="fa fa-bookmark ml-2 mr-2" aria-hidden="true"></i>Saved</a>
+            </li>
+            <li class="nav-item">
+                <a href="search.html" class="nav-link mr-2 nav-color"><i class="fa fa-search ml-2 mr-2" aria-hidden="true"></i>Search</a>            </li>
+            <li class="nav-item">
+                <a href="history.html" class="nav-link mr-2 nav-color"><i class="fa fa-history ml-2 mr-2" aria-hidden="true"></i>History</a>
+            </li>
+            <li><i class="fa fa-user-circle nav-link nav-color place icon-hover" aria-hidden="true"></i></li>
+        </ul>
+    </nav>
+    <div class="container-fluid table-style">
+<!-------------------------------------------------------------Search Bar---------------------------------------------------------------------------->
+        <div>
+            <div class="form-inline justify-content-center">
+                <input class="form-control mr-sm-2 srch-style col-6" type="text" placeholder="Search" onfocus="showDropdown()" onblur="hideDropdown()" >
+                <!--<input type="text" class="search-box" id="searchInput" placeholder="Search">--->
+                <i class="fa fa-search srch-icon-style" aria-hidden="true" onclick="applyFilters()"></i>
+                <button type="button" class="btn btn-success btn-sm search-tab-icon mr-2"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>SAVE</button>
+                <button type="button" class="btn btn-danger btn-sm search-tab-icon"><i class="fa fa-heart mr-2" aria-hidden="true"></i>FAVORITES</button>
+            </div>
+
+<!---------------------------------------------------------------------Filters--------------------------------------------------------------------->
+            <div class="dropdown col-6 dropdown-box" id="filterDropdown">
+                <div class="filter-group">
+                    <div class="filter-column">
+                        <strong><h6>Genre</h6></strong>
+                        <ul>
+                            <li onclick="selectFilter('Genre', 'Literary Fiction')">Fiction</li>
+                            <li onclick="selectFilter('Genre', 'Mystery/Crime')">Mystery</li>
+                            <li onclick="selectFilter('Genre', 'Romance')">Romance</li>
+                            <li onclick="selectFilter('Genre', 'Adventure')">Adventure</li>
+                            <li onclick="selectFilter('Genre', 'Biography')">Biography</li>
+                            <li onclick="selectFilter('Genre', 'Autobiography')">Autobiography</li>
+                        </ul>
+                    </div>
+                    <div class="filter-column">
+                        <strong><h6>Language</h6></strong>
+                        <ul>
+                            <li onclick="selectFilter('Language', 'English')">English</li>
+                            <li onclick="selectFilter('Language', 'Tamil')">Tamil</li>
+                            <li onclick="selectFilter('Language', 'German')">German</li>
+                            <li onclick="selectFilter('Language', 'French')">French</li>
+                            <li onclick="selectFilter('Language', 'Hindi')">Hindi</li>
+                        </ul>
+                    </div>              
+                </div>
+                <button class="btn btn-info" onclick="applyFilters()">Search</button>
+            </div>
+        </div>
+    </div>
+
+        
+
+      
+        <div class="container-fluid ">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Row No.</th>
+                    <th>Book No.</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Year of Publication</th>
+                    <th>Genre</th>
+                    <th>Language</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody class="table-scroll">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0015</td>
+                    <td>Jane Eyre</td>
+                    <td>Charlotte Brontë</td>
+                    <td>Smith, Elder & Co.</td>
+                    <td>1847</td>
+                    <td>Romance</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0018</td>
+                    <td>Frankenstein</td>
+                    <td>Mary Shelley</td>
+                    <td>Lackington, Hughes, Harding, Mavor & Jones</td>
+                    <td>1818</td>
+                    <td>Fiction</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0312</td>
+                    <td>Mein Kampf</td>
+                    <td>Adolf Hitler</td>
+                    <td>Franz Eher Verlag</td>
+                    <td>1925</td>
+                    <td>Autobiography</td>
+                    <td>German</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>B0320</td>
+                    <td>Becoming</td>
+                    <td>Michelle Obama</td>
+                    <td>Crown Publishing Group</td>
+                    <td>2018</td>
+                    <td>Autobiography</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B0457</td>
+                    <td>The Hobbit</td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>George Allen & Unwin</td>
+                    <td>1937</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B0462</td>
+                    <td>La Vie de Van Gogh</td>
+                    <td>Marc Edo Tralbaut</td>
+                    <td>Gallimard</td>
+                    <td>1956</td>
+                    <td>Biography</td>
+                    <td>French</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B0671</td>
+                    <td>The Wright Brothers	</td>
+                    <td>David McCullough</td>
+                    <td>Simon & Schuster</td>
+                    <td>2015</td>
+                    <td>Biography</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>B7012</td>
+                    <td>Never Let Me Go</td>
+                    <td>Kazuo Ishiguro</td>
+                    <td>Faber and Faber</td>
+                    <td>2005</td>
+                    <td>Dystopian, Science Fiction, Drama</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B7014</td>
+                    <td>Me Before You</td>
+                    <td>Jojo Moyes</td>
+                    <td>Penguin Books</td>
+                    <td>2012</td>
+                    <td>Romance</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B8112</td>
+                    <td>The Girl on the Train</td>
+                    <td>Paula Hawkins</td>
+                    <td>Riverhead Books</td>
+                    <td>2015</td>
+                    <td>Thriller</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B1201</td>
+                    <td>The Silent Patient</td>
+                    <td>Alex Michaelides</td>
+                    <td>Celadon Books</td>
+                    <td>2019</td>
+                    <td>Thriller</td>
+                    <td>English</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B1302</td>
+                    <td>Educated</td>
+                    <td>Tara Westover</td>
+                    <td>Random House</td>
+                    <td>2018</td>
+                    <td>Non-fiction</td>
+                    <td>English</td>
+                    <td>Issued</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>B1403</td>
+                    <td>Ponniyin Selvan</td>
+                    <td>Kalki Krishnamurthy</td>
+                    <td>Vanathi Pathippagam</td>
+                    <td>1950s</td>
+                    <td>Adventure</td>
+                    <td>Tamil</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7004</td>
+                    <td>Die Leiden des jungen Werthers</td>
+                    <td>Johann Wolfgang von Goethe</td>
+                    <td>Insel Verlag</td>
+                    <td>1774</td>
+                    <td>Available</td>
+                    <td>Romance, Tragedy</td>
+                    <td>German</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7005</td>
+                    <td>Le Comte de Monte-Cristo</td>
+                    <td>Alexandre Dumas</td>
+                    <td>Michel Lévy Frères</td>
+                    <td>1844</td>
+                    <td>Available</td>
+                    <td>Adventure, Historical Fiction</td>
+                    <td>French</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7006</td>
+                    <td>Notre-Dame de Paris</td>
+                    <td>Victor Hugo</td>
+                    <td>Gosselin</td>
+                    <td>1831</td>
+                    <td>Available</td>
+                    <td>Romance, Gothic Fiction</td>
+                    <td>French</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7007</td>
+                    <td>Don Quijote de la Mancha</td>
+                    <td>Miguel de Cervantes</td>
+                    <td>Francisco de Robles</td>
+                    <td>1605</td>
+                    <td>Available</td>
+                    <td>Adventure, Satire</td>
+                    <td>Spanish</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>7</td>
+                    <td>B7008</td>
+                    <td>Cien años de soledad</td>
+                    <td>Gabriel García Márquez</td>
+                    <td>Editorial Sudamericana</td>
+                    <td>1967</td>
+                    <td>Available</td>
+                    <td>Magical Realism, Literary Fiction</td>
+                    <td>Spanish</td>
+                </tr>
+
+            </tbody>
+        </table>
+        </div>
+
+<!--------------------------------------------------------------Script------------------------------------------------------------------------------>
+        <script>
+  const searchInput = document.querySelector('.srch-style');
+  const filterDropdown = document.getElementById('filterDropdown');
+
+  // Show dropdown when input is focused
+  searchInput.addEventListener('focus', () => {
+    filterDropdown.style.display = 'block';
+  });
+
+  // Hide dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+    if (!filterDropdown.contains(event.target) && !searchInput.contains(event.target)) {
+      filterDropdown.style.display = 'none';
+    }
+  });
+  
+  selectedFiltersBox.addEventListener('mousedown', function (event) {
+    event.stopPropagation();
+  });
+
+  /*function selectFilter(category, value) {
+    const key = `${category}:${value}`;
+    if (!selectedFilters.includes(key)) {
+      selectedFilters.push(key);
+      updateSelectedFilters();
+    }
+  }
+
+  function removeFilter(index) {
+    selectedFilters.splice(index, 1);
+    updateSelectedFilters();
+    applyFilters();
+  }
+
+  function updateSelectedFilters() {
+    selectedFiltersBox.innerHTML = "";
+    selectedFilters.forEach((item, index) => {
+      const [category, value] = item.split(":");
+      const tag = document.createElement("div");
+      tag.className = "filter-tag";
+      tag.innerHTML = `${value}<span onclick="removeFilter(${index})">&times;</span>`;
+      selectedFiltersBox.appendChild(tag);
+    });
+  }
+
+  function applyFilters() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const rows = document.querySelectorAll("table tbody tr");
+
+    rows.forEach(row => {
+      const title = row.children[3].textContent.toLowerCase();
+      const genre = row.children[7]?.textContent.toLowerCase() || "";
+      const language = row.children[8]?.textContent.toLowerCase() || "";
+
+      let matchesSearch = title.includes(input);
+      let matchesFilters = true;
+
+      selectedFilters.forEach(filter => {
+        const [cat, val] = filter.split(":");
+        const valLower = val.toLowerCase();
+        if (cat === "Genre" && !genre.includes(valLower)) matchesFilters = false;
+        if (cat === "Language" && !language.includes(valLower)) matchesFilters = false;
+      });
+
+      row.style.display = matchesSearch && matchesFilters ? "" : "none";
+    });
+  }
+
+  document.getElementById("searchIcon").addEventListener("click", applyFilters);*/
+  
+
+  let selectedFilters = [];
+
+    function selectFilter(category, value) {
+      const key = `${category}:${value}`;
+      if (!selectedFilters.includes(key)) {
+        selectedFilters.push(key);
+        updateSelectedFilters();
+      }
+    }
+
+    function removeFilter(index) {
+      selectedFilters.splice(index, 1);
+      updateSelectedFilters();
+      applyFilters();
+    }
+
+    function updateSelectedFilters() {
+      const container = document.getElementById("selectedFiltersBox");
+      container.innerHTML = "";
+      selectedFilters.forEach((item, index) => {
+        const [category, value] = item.split(":");
+        const tag = document.createElement("div");
+        tag.className = "filter-tag";
+        tag.innerHTML = `${value}<span onclick="removeFilter(${index})">&times;</span>`;
+        container.appendChild(tag);
+      });
+    }
+
+    function applyFilters() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("table tbody tr");
+
+      rows.forEach(row => {
+        const title = row.children[2].textContent.toLowerCase();
+        const genre = row.children[4].textContent.toLowerCase();
+        const language = row.children[5].textContent.toLowerCase();
+        let matchesSearch = title.includes(input);
+        let matchesFilters = true;
+
+        selectedFilters.forEach(filter => {
+          const [cat, val] = filter.split(":");
+          const valLower = val.toLowerCase();
+          if (cat === "Genre" && !genre.includes(valLower)) matchesFilters = false;
+          if (cat === "Language" && !language.includes(valLower)) matchesFilters = false;
+        });
+
+        row.style.display = matchesSearch && matchesFilters ? "" : "none";
+      });
+    }
+
+    document.getElementById("searchIcon").addEventListener("click", applyFilters);
+
+
+
+  function saveSelected(type) {
+  const selectedBooks = [];
+  const checkboxes = document.querySelectorAll("table tbody input[type='checkbox']");
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      const row = checkbox.closest("tr");
+      const book = {
+        bookNo: row.children[1].textContent.trim(),
+        title: row.children[2].textContent.trim()
+      };
+      selectedBooks.push(book);
+    }
+  });
+
+  if (selectedBooks.length > 0) {
+    // Save to localStorage using the given type (e.g., "saved")
+    localStorage.setItem(type, JSON.stringify(selectedBooks));
+    alert(`Added ${selectedBooks.length} book(s) to ${type}`);
+
+    // Optional: redirect to saved.html
+    
+  } else {
+    alert("No books selected");
+  }
+}
+</script>
+
+    <!----<script>
+  let selectedFilters = [];
+
+  function selectFilter(category, value) {
+    const key = `${category}:${value}`;
+    if (!selectedFilters.includes(key)) {
+      selectedFilters.push(key);
+      updateSelectedFilters();
+    }
+  }
+
+  function removeFilter(index) {
+    selectedFilters.splice(index, 1);
+    updateSelectedFilters();
+  }
+
+  function updateSelectedFilters() {
+    let container = document.getElementById("selectedFiltersBox");
+
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "selectedFiltersBox";
+      container.style.display = "flex";
+      container.style.flexWrap = "wrap";
+      container.style.gap = "8px";
+      container.style.marginTop = "10px";
+      container.style.marginLeft = "30px";
+      container.style.maxWidth = "50%";
+      container.style.alignItems = "center";
+      container.style.justifyContent = "flex-start";
+      container.style.position = "absolute";
+      container.style.top = "100%";
+      container.style.left = "52%";
+      document.getElementById("filterDropdown").style.position = "relative";
+      document.getElementById("filterDropdown").appendChild(container);
+    }
+
+    container.innerHTML = "";
+
+    selectedFilters.forEach((item, index) => {
+      const [category, value] = item.split(":");
+      const tag = document.createElement("div");
+      tag.style.backgroundColor = "#6c757d";
+      tag.style.color = "#fff";
+      tag.style.borderRadius = "20px";
+      tag.style.padding = "5px 12px";
+      tag.style.display = "inline-flex";
+      tag.style.alignItems = "center";
+      tag.style.fontSize = "14px";
+
+      tag.innerHTML = `
+        ${value}
+        <span onclick="removeFilter(${index})"
+              style="margin-left: 8px; cursor: pointer;">&times;</span>
+      `;
+      container.appendChild(tag);
+    });
+  }
+
+  function applyFilters() {
+    const rows = document.querySelectorAll("table tbody tr");
+
+    rows.forEach(row => {
+      const genre = row.children[7]?.textContent.toLowerCase() || "";
+      const language = row.children[8]?.textContent.toLowerCase() || "";
+
+      let show = true;
+      selectedFilters.forEach(filter => {
+        const [cat, val] = filter.split(":");
+        const valLower = val.toLowerCase();
+
+        if (cat === "Genre" && !genre.includes(valLower)) show = false;
+        if (cat === "Language" && !language.includes(valLower)) show = false;
+      });
+
+      row.style.display = show ? "" : "none";
+    });
+  }
+</script>-->
+
+
+        
+
+        
+        
+    </div>
+</body>
+</html>

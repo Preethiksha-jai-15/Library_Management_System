@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./SCSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+    <!----------------------------------------------------------Navigation Bar--------------------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-sm nav-pills navbar-bg justify-content-center ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link mr-2 nav-color" data-toggle="pills"><i class="fa fa-home ml-2 mr-2" aria-hidden="true"></i>Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link mr-2 nav-color"><i class="fa fa-heart ml-2 mr-2" aria-hidden="true"></i>Favorites</a>              
+            </li>
+            <li class="nav-item">
+                <a href="saved.html" class="nav-link mr-2 nav-color"><i class="fa fa-bookmark ml-2 mr-2" aria-hidden="true"></i>Saved</a>
+            </li>
+            <li class="nav-item">
+                <a href="srch.html" class="nav-link mr-2 nav-color"><i class="fa fa-search ml-2 mr-2" aria-hidden="true"></i>Search</a>            </li>
+            <li class="nav-item">
+                <a href="history.html" class="nav-link mr-2 nav-color"><i class="fa fa-history ml-2 mr-2" aria-hidden="true"></i>History</a>
+            </li>
+            <li><i class="fa fa-user-circle nav-link nav-color place icon-hover" aria-hidden="true"></i></li>
+        </ul>
+  </nav>
+
+  <!--------------------------------------------------------------Body------------------------------------------------------------------------------->
+    <div class="container-fluid header-style">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5><b>FAVORITES :</b></h5>
+      </div>
+      <div class="page-scroll">
+        <div class="row m-0 row-style">
+          <div class="col-2 p-0">
+            <img src="./Assests/Images/fav-1.JPG" alt="Becoming" class="fav-img">
+          </div>
+          <div class="col-10 p-0">
+            <div class="para-style">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>BECOMING </h5>
+                <i class="fa fa-heart padd-heart" aria-hidden="true"></i>
+              </div>
+              <p class="author-style">Michelle Obama</p>
+              <p>In her memoir, a work of deep reflection and mesmerizing storytelling, Michelle Obama invites readers into her world, chronicling the experiences that have shaped her -- from her childhood on the South Side of Chicago to her years as an executive balancing the demands of motherhood and work, to her time spent at the world's most famous address. With unerring honesty and lively wit, she describes her triumphs and her disappointments, both public and private, telling her full story as she has lived it -- in her own words and on her own terms.
+                Warm, wise, and revelatory, Becoming is the deeply personal reckoning of a woman of soul and substance who has steadily defied expectations -- and whose story inspires us to do the same.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-0 row-style">
+          <div class="col-2 p-0">
+            <img src="./Assests/Images/fav-2.JPG" alt="The Lost Symbol" class="fav-img">
+          </div>
+          <div class="col-10 p-0">
+            <div class="para-style">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>The Lost Symbol</h5>
+                <i class="fa fa-heart padd-heart" aria-hidden="true"></i>
+              </div>
+              <p class="author-style">Dan Brown</p>
+              <p>Harvard symbologist Robert Langdon is summoned unexpectedly to the U.S. Capitol, only to find himself entangled in a shocking mystery linked to the Freemasons. A trusted mentor has been kidnapped, a mysterious tattooed villain is orchestrating cryptic events, and Langdon must follow a series of symbols and puzzles hidden in the architecture and artwork of the capital.
+                As the story unfolds over a twelve-hour time span, Langdon races against time through historical landmarks and Masonic secrets to prevent a national disaster — all while exploring ancient knowledge and the potential of the human mind.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-0 row-style">
+          <div class="col-2 p-0">
+            <img src="./Assests/Images/fav-3.JPG" alt="Ikigai" class="fav-img">
+          </div>
+          <div class="col-10 p-0">
+            <div class="para-style">
+              <div class="d-flex justify-content-between align-items-center">
+              <h5>Ikigai</h5>
+              <i class="fa fa-heart padd-heart" aria-hidden="true"></i>
+            </div>
+              <p class="author-style">Héctor García, Francesc Miralles </p>
+              <p>We all have an ikigai. It's the Japanese word for 'a reason to live' or 'a reason to jump out of bed in the morning'. The place where your needs, ambitions, skills and satisfaction meet. A place of balance.
+                This book will help you unlock what your ikigai is and equip you to change your life. There is a passion inside you - a unique talent that gives you purpose and makes you the perfect candidate for something. All you have to do is discover and live it.
+                Do that, and you can make every single day of your life joyful and meaningful.
+                'A refreshingly simple recipe for happiness' Stylist
+                'Ikigai gently unlocks simple secrets we can all use to live long, meaningful, happy lives' Neil Pasricha, bestselling author of The Happiness Equation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row m-0 row-style">
+          <div class="col-2 p-0">
+            <img src="./Assests/Images/fav-4.JPG" alt="Rich Dad Poor Dad" class="fav-img">
+          </div>
+          <div class="col-10 p-0">
+            <div class="para-style">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>Rich Dad Poor Dad</h5>
+                <i class="fa fa-heart padd-heart" aria-hidden="true"></i>
+              </div>
+              <p class="author-style">Robert Kiyosaki and Sharon Lechter</p>
+              <p>It's been nearly 25 years since Robert Kiyosaki’s Rich Dad Poor Dad first made waves in the Personal Finance arena.
+                 It has since become the #1 Personal Finance book of all time... translated into dozens of languages and sold around the world.
+                 Rich Dad Poor Dad is Robert's story of growing up with two dads his real father and the father of his best friend, his rich dad and the ways in which both men shaped his thoughts about money and investing. 
+                 The book explodes the myth that you need to earn a high income to be rich and explains the difference between working for money and having your money work for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hearts = document.querySelectorAll('.fa-heart');
+
+    hearts.forEach(function (heart) {
+      heart.addEventListener('click', function () {
+        const bookRow = this.closest('.row');
+        if (bookRow) {
+          bookRow.remove();
+        }
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

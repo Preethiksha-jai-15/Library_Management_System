@@ -1,0 +1,173 @@
+.body-height {
+  max-height: 133px !important;
+}
+
+.eb-width {
+  width: 65px;
+}
+
+.box-4 {
+  overflow-x: auto;
+  padding: 0px;
+  height: 26vh;
+}
+
+.card-header {
+  background-color: #fff !important;
+}
+
+.card-link-color {
+  color: #000;
+}
+
+.card-link-color:hover {
+  color: #000;
+}
+
+.arrow-style {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  color: #000;
+}
+
+.body-allign {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  text-align: justify !important;
+  padding-top: 0px;
+  padding-left: 50px !important;
+}
+
+.card-link:focus,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.circle-style {
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  right: 248px;
+  top: 372px;
+  color: #772F0B;
+}
+
+.border-style {
+  border: 2px solid #772F0B !important;
+}
+
+.circle-position {
+  justify-content: center;
+  margin: 10px;
+  margin-left: 220px;
+}
+
+.borrowedbook {
+  /* padding-top: 66px !important;*/
+  max-height: 126px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scroll */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding-right: 5px;
+  position: relative;
+  z-index: 1; /* Prevent clipping on the right */
+}
+
+.borrowedbook-img {
+  width: 58px;
+}
+
+.bottom-border {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.bd, .rd {
+  font-size: 0.85rem;
+  color: #434343;
+}
+
+.card-style {
+  border: 2px solid #772F0B;
+  border-radius: 10px;
+  width: 330px;
+  margin: auto;
+}
+
+.card-name {
+  background-color: #772F0B;
+  color: white;
+  font-weight: bold;
+}
+
+.podcast-img {
+  width: 60px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.podcast-img.active {
+  width: 100px;
+  height: 120px;
+  opacity: 1;
+}
+
+.img-row {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title-position {
+  padding-top: 3px;
+}
+
+.button-style {
+  font-size: 24px !important;
+  padding-top: 25px;
+  color: #772F0B;
+}
+
+.box3-style {
+  height: 88vh !important;
+}
+
+.podcast-name {
+  top: 209px;
+  position: absolute;
+  left: 210px;
+}
+
+.epi-padd {
+  padding-left: 10px;
+}
+
+.podcast-style {
+  height: 42vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 12px;
+}
+
+.epi-style {
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.popup-style {
+  position: absolute;
+  z-index: 9999;
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  top: -58.112px !important;
+  left: 344.888px !important;
+}/*# sourceMappingURL=accordion.css.map */

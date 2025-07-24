@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Library Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    #selectedFiltersBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+    .filter-tag {
+      background-color: #6c757d;
+      color: #fff;
+      border-radius: 20px;
+      padding: 5px 12px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    .filter-tag span {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+    .dropdown-box {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .dropdown-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .dropdown-box ul li {
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .dropdown-box ul li:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-home mr-2"></i>Home</a></li>
+      <li class="nav-item"><a href="favorites.html" class="nav-link"><i class="fa fa-heart mr-2"></i>Favorites</a></li>
+      <li class="nav-item"><a href="saved.html" class="nav-link"><i class="fa fa-bookmark mr-2"></i>Saved</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search & Filters -->
+  <div class="container my-4">
+    <div class="form-inline justify-content-center mb-3">
+      <input class="form-control mr-2 col-6" id="searchInput" type="text" placeholder="Search by book name">
+      <i class="fa fa-search fa-lg mr-3" id="searchIcon" style="cursor:pointer"></i>
+      <button type="button" class="btn btn-success mr-2" onclick="saveSelected('saved')"><i class="fa fa-floppy-o mr-2"></i>Save</button>
+      <button type="button" class="btn btn-danger" onclick="saveSelected('favorites')"><i class="fa fa-heart mr-2"></i>Favorites</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="dropdown-box">
+      <div class="d-flex">
+        <div class="mr-5">
+          <strong><h6>Genre</h6></strong>
+          <ul>
+            <li onclick="selectFilter('Genre', 'Fiction')">Fiction</li>
+            <li onclick="selectFilter('Genre', 'Mystery')">Mystery</li>
+            <li onclick="selectFilter('Genre', 'Romance')">Romance</li>
+            <li onclick="selectFilter('Genre', 'Adventure')">Adventure</li>
+            <li onclick="selectFilter('Genre', 'Biography')">Biography</li>
+            <li onclick="selectFilter('Genre', 'Autobiography')">Autobiography</li>
+          </ul>
+        </div>
+        <div>
+          <strong><h6>Language</h6></strong>
+          <ul>
+            <li onclick="selectFilter('Language', 'English')">English</li>
+            <li onclick="selectFilter('Language', 'Tamil')">Tamil</li>
+            <li onclick="selectFilter('Language', 'German')">German</li>
+            <li onclick="selectFilter('Language', 'French')">French</li>
+            <li onclick="selectFilter('Language', 'Hindi')">Hindi</li>
+          </ul>
+        </div>
+        <div id="selectedFiltersBox" class="ml-auto"></div>
+      </div>
+      <button class="btn btn-info btn-sm mt-2" onclick="applyFilters()">Search</button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <!-- <div class="container">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th>Book No.</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Language</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>B001</td>
+          <td>Jane Eyre</td>
+          <td>Charlotte Brontë</td>
+          <td>Romance</td>
+          <td>English</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>B002</td>
+          <td>Frankenstein</td>
+          <td>Mary Shelley</td>
+          <td>Fiction</td>
+          <td>English</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>B003</td>
+          <td>Mein Kampf</td>
+          <td>Adolf Hitler</td>
+          <td>Autobiography</td>
+          <td>German</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>B004</td>
+          <td>Becoming</td>
+          <td>Michelle Obama</td>
+          <td>Autobiography</td>
+          <td>English</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>B005</td>
+          <td>Ponniyin Selvan</td>
+          <td>Kalki</td>
+          <td>Adventure</td>
+          <td>Tamil</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+<div class="container">
+            <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                <th></th>
+                <th>Book No.</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><input type="checkbox"></td>
+                <td>B001</td>
+                <td>Jane Eyre</td>
+                <td>Charlotte Brontë</td>
+                <td>Romance</td>
+                <td>English</td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                <td>B002</td>
+                <td>Frankenstein</td>
+                <td>Mary Shelley</td>
+                <td>Fiction</td>
+                <td>English</td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                <td>B003</td>
+                <td>Mein Kampf</td>
+                <td>Adolf Hitler</td>
+                <td>Autobiography</td>
+                <td>German</td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                <td>B004</td>
+                <td>Becoming</td>
+                <td>Michelle Obama</td>
+                <td>Autobiography</td>
+                <td>English</td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                <td>B005</td>
+                <td>Ponniyin Selvan</td>
+                <td>Kalki</td>
+                <td>Adventure</td>
+                <td>Tamil</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+  <!-- Script -->
+  <script>
+    let selectedFilters = [];
+
+    function selectFilter(category, value) {
+      const key = `${category}:${value}`;
+      if (!selectedFilters.includes(key)) {
+        selectedFilters.push(key);
+        updateSelectedFilters();
+      }
+    }
+
+    function removeFilter(index) {
+      selectedFilters.splice(index, 1);
+      updateSelectedFilters();
+      applyFilters();
+    }
+
+    function updateSelectedFilters() {
+      const container = document.getElementById("selectedFiltersBox");
+      container.innerHTML = "";
+      selectedFilters.forEach((item, index) => {
+        const [category, value] = item.split(":");
+        const tag = document.createElement("div");
+        tag.className = "filter-tag";
+        tag.innerHTML = `${value}<span onclick="removeFilter(${index})">&times;</span>`;
+        container.appendChild(tag);
+      });
+    }
+
+    function applyFilters() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("table tbody tr");
+
+      rows.forEach(row => {
+        const title = row.children[2].textContent.toLowerCase();
+        const genre = row.children[4].textContent.toLowerCase();
+        const language = row.children[5].textContent.toLowerCase();
+        let matchesSearch = title.includes(input);
+        let matchesFilters = true;
+
+        selectedFilters.forEach(filter => {
+          const [cat, val] = filter.split(":");
+          const valLower = val.toLowerCase();
+          if (cat === "Genre" && !genre.includes(valLower)) matchesFilters = false;
+          if (cat === "Language" && !language.includes(valLower)) matchesFilters = false;
+        });
+
+        row.style.display = matchesSearch && matchesFilters ? "" : "none";
+      });
+    }
+
+    document.getElementById("searchIcon").addEventListener("click", applyFilters);
+
+    function saveSelected(type) {
+  const selectedBooks = [];
+  const checkboxes = document.querySelectorAll("table tbody input[type='checkbox']");
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      const row = checkbox.closest("tr");
+      const book = {
+        bookNo: row.children[1].textContent.trim(),
+        title: row.children[2].textContent.trim()
+      };
+      selectedBooks.push(book);
+    }
+  });
+
+  if (selectedBooks.length > 0) {
+    // Save to localStorage using the given type (e.g., "saved")
+    localStorage.setItem(type, JSON.stringify(selectedBooks));
+    alert(`Added ${selectedBooks.length} book(s) to ${type}`);
+
+    // Optional: redirect to saved.html
+    
+  } else {
+    alert("No books selected");
+  }
+}
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
